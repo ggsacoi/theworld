@@ -1,0 +1,13 @@
+body {display: flex; flex-wrap: wrap; justify-content: center;align-items: center; flex-direction: column; margin: 0;padding: 0; box-sizing: border-box; background-position: center; background-image: url("739912.jpg");background-size: ;background-repeat: no-repeat; width: 100vw;}
+.allcards {display: none;}
+@media (max-width:1400px) {
+.visible {display: flex;flex-direction: column;gap: 50px; align-items: center;}
+}
+@media (min-width:1399px) {
+.visible {display: flex;flex-direction: row;}
+.Image-container {display: flex; justify-content: center; width: 65vw;}
+}
+button {padding: 2rem; background-color: skyblue; border-radius: 1rem; margin: 15px;}
+.Image-container {display: flex; justify-content: center;}
+.allteam {display: flex; flex-wrap: wrap; justify-content: center; max-width: 1000px; flex-direction: row; height: 600px; gap: 20px;}
+.char {width: 200px; height: 345px;}
