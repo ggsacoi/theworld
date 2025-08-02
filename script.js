@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
     const images = [
-        'Makilaaz0 (6) copy.webp',
         'makilaaz0.jfif',
         'Makilaaz0 (2).jfif',
         'Makilaaz0 (2).jpg',
@@ -65,6 +64,13 @@ document.addEventListener('DOMContentLoaded', function() {
         const img = document.createElement('img');
         img.src = src;
         img.style.width = "500px";
+        const userAgent = window.navigator.userAgent;
+        if (window.innerWidth <= 1562) {
+            img.style.width = "32vw";
+        }
+        if (/iPhone|iPad|iPod|Android/i.test(userAgent) && window.innerWidth <= 750) {
+            img.style.width = "47vw";
+        }
         preview.appendChild(img);
     });
 });
