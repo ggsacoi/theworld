@@ -1,50 +1,70 @@
-const image = document.querySelectorAll('.image');
-const button = document.querySelector('button');
-const chars = document.querySelectorAll('.char');
-let clickCount = 0;
-let isTimeoutActive = false;
-
-image.forEach((img) => {
-    img.width = 200;
-});
-
-button.addEventListener('click', () => {
-    if (clickCount >= 10 || isTimeoutActive) return;
-    isTimeoutActive = true;
-
-    const card = document.querySelector('.container'); // <img class="container" ... >
-
-    // Créer l'élément vidéo
-    const video = document.createElement('video');
-    video.width = 900;
-    video.autoplay = true;
-
-    const source = document.createElement('source');
-    source.src = "Monkey D Luffy Edit.mp4";
-    source.type = "video/mp4";
-    video.appendChild(source);
-
-    // Masquer l'image et afficher la vidéo à la place
-    card.style.display = "none";
-    card.parentNode.insertBefore(video, card);
-
-    setTimeout(() => {
-        // Choisir une image au hasard
-        const randomIndex = Math.floor(Math.random() * image.length);
-        const selectedImg = image[randomIndex];
-        // Mettre à jour la source de l'image principale
-        card.src = selectedImg.src;
-        // Afficher l'image et retirer la vidéo
-        card.style.display = "";
-        video.remove();
-
-        // Mettre à jour le char correspondant au numéro du clic
-        const chars = document.querySelectorAll('.char');
-        if (chars.length > clickCount) {
-            chars[clickCount].src = selectedImg.src;
-        }
-
-        clickCount++;
-        isTimeoutActive = false;
-    }, 10000); // 10000 ms = 10 secondes
+document.addEventListener('DOMContentLoaded', function() {
+    const images = [
+        'Makilaaz0 (6) copy.webp',
+        'makilaaz0.jfif',
+        'Makilaaz0 (2).jfif',
+        'Makilaaz0 (2).jpg',
+       'Makilaaz0 (2).png',
+        'Makilaaz0 (3).jfif',
+        'Makilaaz0 (3).jpg',
+        'Makilaaz0 (3).png',
+        'Makilaaz0 (3).webp',
+        'Makilaaz0 (4).jfif',
+        'Makilaaz0 (4).png',
+        'Makilaaz0 (4).jpg',
+        'Makilaaz0 (15).png',
+        'Makilaaz0 (4).webp',
+        'Makilaaz0 (5).jfif',
+        'Makilaaz0 (18).png',
+        'Makilaaz0 (5).jpg',
+        'Makilaaz0 (5).png',
+        'Makilaaz0 (5).webp',
+        'Makilaaz0 (6).jfif',
+        'Makilaaz0 (13).png',
+        'Makilaaz0 (6).jpg',
+        'Makilaaz0 (6).webp',
+        'Makilaaz0 (7).jfif',
+        'makilaaz0 (7).jpg',
+        'Makilaaz0 (7).png',
+        'makilaaz0 (7).webp',
+        'makilaaz0 (8).jpg',
+        'Makilaaz0 (13).jfif',
+        'Makilaaz0 (8).png',
+        'Makilaaz0 (9).jfif',
+        'makilaaz0 (9).jpg',
+        'Makilaaz0 (9).png',
+        'Makilaaz0 (10).jfif',
+        'makilaaz0 (10).jpg',
+        'Makilaaz0 (11).jfif',
+        'Makilaaz0 (11).jpg',
+        'Makilaaz0 (11).png',
+        'Makilaaz0 (12).jfif',
+        'Makilaaz0 (16).png',
+        'Makilaaz0 💕💗.jfif',
+        'Makilaaz0 🔥 (1).jfif',
+        'Makilaaz0 (19).png',
+        'Makilaaz0 🔥 (3).jfif',
+        'Makilaaz0 🔥.jfif',
+        'Makilaaz0 (12).png',
+        'makilaaz0 🥷🏾.jfif',
+        'Makilaaz0 (6).png',
+        'makilaaz0 🩸.jfif',
+        'Makilaaz0 (17).png',
+        'Makilaaz0 🩸🩸.jfif',
+        'Makilaaz0.jpg',
+        'Makilaaz0.png',
+        'Makilaaz0.webp',
+        'Makilaaz0 (14).png',
+        'makilaaz0❤.jfif',
+        'makilaaz0🤴🏾🌍.jfif',
+        'Makilaaz0 (20).png',
+        // Ajoute ici tous tes fichiers connus
+    ];
+    const preview = document.getElementById('preview');
+    images.forEach(src => {
+        const img = document.createElement('img');
+        img.src = src;
+        img.style.width = "500px";
+        preview.appendChild(img);
+    });
 });
