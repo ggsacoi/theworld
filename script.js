@@ -56,8 +56,7 @@ document.addEventListener('DOMContentLoaded', function() {
         'Makilaaz0 (14).png',
         'makilaaz0❤.jfif',
         'makilaaz0🤴🏾🌍.jfif',
-        'Makilaaz0 (20).png',
-        // Ajoute ici tous tes fichiers connus
+        'Makilaaz0 (20).png'
     ];
     const preview = document.getElementById('preview');
     images.forEach(src => {
