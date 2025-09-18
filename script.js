@@ -56,6 +56,7 @@ document.addEventListener('DOMContentLoaded', function() {
         'Makilaaz0 (14).png',
         'makilaaz0❤.jfif',
         'makilaaz0🤴🏾🌍.jfif',
+        'assets_task_01k176t61xea1ttrbzcz47anh3_1753662539_img_0.webp',
         'Makilaaz0 (20).png'
     ];
     const preview = document.getElementById('preview');
